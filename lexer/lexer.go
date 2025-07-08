@@ -1,5 +1,7 @@
 package lexer
 
+import "monkey/token"
+
 type Lexer struct {
 	input        string
 	position     int
@@ -20,4 +22,8 @@ func (l *Lexer) readChar() {
 	}
 	l.position = l.readPosition
 	l.readPosition++
+}
+
+func newToken(tokenType token.TokenType, ch byte) token.Token {
+	return token.Token{Type: tokenType, Literal: string(ch)}
 }
