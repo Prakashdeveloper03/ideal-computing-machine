@@ -25,8 +25,8 @@ const (
 )
 
 var keywords = map[string]TokenType{
-	"func": FUNCTION,
-	"let":  LET,
+	"fn":  FUNCTION,
+	"let": LET,
 }
 
 func LookupIdent(ident string) TokenType {
